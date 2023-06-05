@@ -1,0 +1,21 @@
+Time complexity is the time taken by the algorithm to execute each set of instructions. It is always better to select the most efficient algorithm when a simple problem can solve with different methods.
+
+Space complexity is usually referred to as the amount of memory consumed by the algorithm. It is composed of two different spaces; Auxiliary space and Input space.
+
+Big Omega (Ω) Notation: It defines the lower bound of a function — i.e., the minimum time taken by an algorithm. It gives the minimum output value (big-Ω) for a respective input.
+
+Big Theta (Θ) Notation: It defines the lower bound and upper bound of a function i.e., it exists as at the both, most and at least boundaries for a given input value.
+
+
+O(1) - Excellent/Best
+O(log n) - Good
+O(n) - Fair
+O(n log n) - Bad
+O(n^2), O(2^n) and O(n!) - Horrible/Worst
+
+This is how you get a rough idea of time complexity:
+-> When your calculation is not dependent on the input size, it is a constant time complexity (O(1)).
+-> When the input size is reduced by half, maybe when iterating, handling recursion, or whatsoever, it is a logarithmic time complexity (O(log n)).
+-> When you have a single loop within your algorithm, it is linear time complexity (O(n)).
+-> When you have nested loops within your algorithm, meaning a loop in a loop, it is quadratic time complexity (O(n^2)).
+-> When the growth rate doubles with each addition to the input, it is exponential time complexity (O2^n).
