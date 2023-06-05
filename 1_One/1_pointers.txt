@@ -1,0 +1,95 @@
+# Important points about Pointers in CPP:
+
+1-> To get value of the memory address of a variable in CPP, we use ampersand symbol (&). 
+    Example: int x = 12;
+             int * ptr = &x;
+
+
+2-> To get the value of a memory address, we dereference it using asterisk.
+    Example: int y = * ptr;
+
+
+3-> The below example explains the working of pointer and arrays:
+    #include <iostream>
+    using namespace std;
+
+    int main ()
+    {
+        int numbers[5];
+        int * p;
+        p = numbers;  *p = 10;
+        p++;  *p = 20;
+        p = &numbers[2];  *p = 30;
+        p = numbers + 3;  *p = 40;
+        p = numbers;  *(p+4) = 50;
+        for (int n=0; n<5; n++)
+            cout << numbers[n] << ", ";
+        return 0;
+    }
+
+
+4-> Remember these:
+    *p++   // same as *(p++): increment pointer, and dereference unincremented address
+    *++p   // same as *(++p): increment pointer, and dereference incremented address
+    ++*p   // same as ++(*p): dereference pointer, and increment the value it points to
+    (*p)++ // dereference pointer, and post-increment the value it points to 
+
+
+5-> Pointers can be of constant type.
+These two are the same:
+    const int * p2a = &x;  //      non-const pointer to const int
+    int const * p2b = &x;  // also non-const pointer to const int
+
+
+6-> Pointers to pointers in cpp: C++ allows the use of pointers that point to pointers, that these, in its turn, point to data (or even to other pointers). 
+
+The syntax simply requires an asterisk (*) for each level of indirection in the declaration of the pointer:
+    char a;
+    char * b;
+    char ** c;
+    a = 'z';
+    b = &a;
+    c = &b;
+
+In the above case:
+-> c is of type char** and a value of 8092, which is the address value of b.
+-> *c is of type char* and a value of 7230, which is the value held by b. The value held by b is address of a.
+-> **c is of type char and a value of 'z', which is the value of the address held by b. 
+
+Reread this several time, and it will start making sense.
+
+
+7-> Void pointers: The void type of pointer is a special type of pointer. In C++, void represents the absence of type. 
+
+Therefore, void pointers are pointers that point to a value that has no type (and thus also an undetermined length and undetermined dereferencing properties).
+
+
+8-> C++ allows operations with pointers to functions. The typical use of this is for passing a function as an argument to another function. 
+Pointers to functions are declared with the same syntax as a regular function declaration, except that the name of the function is enclosed between parentheses () and an asterisk (*) is inserted before the name:
+Example: 
+    #include <iostream>
+    using namespace std;
+
+    int addition (int a, int b)
+    { return (a+b); }
+
+    int subtraction (int a, int b)
+    { return (a-b); }
+
+    int operation (int x, int y, int (*functocall)(int,int))
+    {
+        int g;
+        g = (*functocall)(x,y);
+        return (g);
+    }
+
+    int main ()
+    {
+        int m,n;
+        int (*minus)(int,int) = subtraction;
+
+        m = operation (7, 5, addition);
+        n = operation (20, m, minus);
+        cout <<n;
+        return 0;
+    }
