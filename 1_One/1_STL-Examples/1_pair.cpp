@@ -9,8 +9,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-NOTE: This code didn't work.
+
+// NOTE: This code didn't work. I upgraded the compiler and it's working now.
 void explainPairFirst()
 {
     pair<int, int> simplePair = {1, 3}; // Pair definition with 2 elements, 1 and 3.
@@ -26,7 +26,7 @@ void explainPairFirst()
     pair<int, int> pairArr[] = {{2, 3}, {9, 4}, {8, 14}, {11, 12}};
     cout << "Array of pairs: " << pairArr[0].first << " " << pairArr[3].second << " " << pairArr[2].first;
 }
-*/
+
 
 void explainPairSecond()
 {
