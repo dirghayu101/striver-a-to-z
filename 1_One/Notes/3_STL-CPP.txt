@@ -2,4 +2,8 @@
 
 -> STL stands for Standard Template Library. It contains a lot of pre-defined templates in terms of containers and classes which makes it very easy for developers or programmers to implement different data structures easily without having to write complete code and worry about space-time complexities.
 
+-> auto will automatically assign datatype to a value provided. You don't have to explicitly state any datatype.
+Example: auto a = "Dirghayu"; //Automatically assigns string.
+         auto num = 40;       //Automatically assigns integer.
+
 -> 

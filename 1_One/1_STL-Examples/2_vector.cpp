@@ -17,6 +17,7 @@ void explainVector()
 {
     // Declaration of vector in CPP.
     vector<int> myVector;
+    vector<int> myVector{10, 20, 30, 40}; //Another way of initialisation with multiple values.
 
     myVector.push_back(5);
     myVector.emplace_back(9);
