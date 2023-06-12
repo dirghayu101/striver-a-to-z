@@ -7,6 +7,8 @@
 */
 
 /*
+A list in STL is a contiguous container that allows the inserting and erasing of elements in constant time and iterating in both directions.
+
 NOTE: List is similar to vector but the biggest advantage of list is that it gives us front operations.
 */
 
