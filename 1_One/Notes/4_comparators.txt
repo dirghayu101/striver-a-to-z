@@ -1,0 +1,23 @@
+In C++, a comparator function is a function that takes two elements of the same type as input and returns a value indicating which element is less than, equal to, or greater than the other element. Comparator functions are used by the standard library sort algorithm to sort a sequence of elements.
+
+The following is an example of a comparator function that can be used to sort a sequence of integers:
+
+```c++
+bool compare_ints(int a, int b) {
+  return a < b;
+}
+```
+
+The sort algorithm will call the comparator function repeatedly to compare pairs of elements in the sequence. The elements will be sorted in ascending order, with the elements that compare as less than each other being placed before the elements that compare as greater than each other.
+
+Comparator functions can also be used to sort sequences of elements of user-defined types. In this case, the comparator function must be written to compare the elements of the user-defined type in a meaningful way. For example, the following comparator function can be used to sort a sequence of strings by their length:
+
+```c++
+bool compare_strings(const std::string& a, const std::string& b) {
+  return a.length() < b.length();
+}
+```
+
+The sort algorithm will call the comparator function repeatedly to compare pairs of strings in the sequence. The strings will be sorted in ascending order, with the strings that have the shorter lengths being placed before the strings that have the longer lengths.
+
+Comparator functions are a powerful tool that can be used to sort sequences of elements in C++. By using comparator functions, you can sort sequences of elements of any type, including user-defined types.
