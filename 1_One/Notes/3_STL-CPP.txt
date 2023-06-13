@@ -6,4 +6,11 @@
 Example: auto a = "Dirghayu"; //Automatically assigns string.
          auto num = 40;       //Automatically assigns integer.
 
--> 
+-> sort() in C++ STL -> Sorting is one of the most standard operations used very frequently while writing programs. 
+
+-> Writing the complete sorting algorithm might be time consuming and hence STL provides us with a standard inbuilt function to sort any container very easily.
+
+-> And also it’s one of the most efficient functions with a N*logN time complexity and uses a mix of quicksort and mergesort in its internal implementation.
+
+
+-> Reference source: https://takeuforward.org/c/c-stl-tutorial-most-frequent-used-stl-containers/
