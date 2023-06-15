@@ -23,13 +23,13 @@ About approach 1:
 class Solution
 {
 public:
-    int findBestPosition(int startPoint, int endPoint, vector<int> &nums)
+    int findMaxValue(int startPoint, int endPoint, vector<int> &nums)
     {
         int maxValue = INT_MIN;
         int maxIndex;
         for (int i = startPoint; i <= endPoint; i++)
         {
-            if (nums[i] > maxValue)
+            if (nums[i] >= maxValue)
             {
                 maxValue = nums[i];
                 maxIndex = i;
@@ -55,7 +55,7 @@ public:
             int startPoint = currentPosition + 1;
             int endPoint = currentPosition + temp;
             // best position should have maximum value.
-            int newBestPosition = findBestPosition(startPoint, endPoint, nums);
+            int newBestPosition = findMaxValue(startPoint, endPoint, nums);
             // Check if the new best position can make you reach the end.
             jump++;
 
@@ -75,3 +75,43 @@ public:
 // NOTE: Approach 1 ends here.
 
 // Only greedy algorithm or dynamic program can help with this problem. Normal solution is not possible.
+
+// A solution worked out. It was not a greedy solution or a DP solution.
+// This is the link: youtube.com/watch?v=wLPdkLM_BWo
+
+int findBestPosition(int startIndex, int endIndex, vector<int> &nums)
+{
+    int maxValue = INT_MIN;
+    int maxIndex;
+    for (int i = startIndex; i <= endIndex; i++)
+    {
+        if ((nums[i] + i) >= maxValue)
+        {
+            maxValue = nums[i] + i;
+            maxIndex = i;
+        }
+    }
+    return maxIndex;
+}
+
+int jump(vector<int> &nums)
+{
+    int finalValue = nums.size() - 1;
+    if (finalValue == 0)
+    {
+        return 0;
+    }
+    int jump = 0, currentValue = 0;
+
+    while (currentValue <= finalValue)
+    {
+        jump++;
+        if ((currentValue + nums[currentValue]) >= finalValue)
+        {
+            break;
+        }
+        int startIndex = currentValue + 1, endIndex = currentValue + nums[currentValue];
+        currentValue = findBestPosition(startIndex, endIndex, nums);
+    }
+    return jump;
+}
