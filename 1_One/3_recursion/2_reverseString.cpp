@@ -33,6 +33,15 @@ string reverseString(string current, string reverse = "")
     return reverseString(current, reverse);
 }
 
+string reverseStringMemo(string input)
+{
+    if (!input.length())
+    {
+        return "";
+    }
+    return reverseStringMemo(input.substr(1)) + input[0];
+}
+
 int main()
 {
     string str;
@@ -42,5 +51,7 @@ int main()
     str = reverseString(str);
     cout << endl
          << "The reversed string is: " << str;
+    cout << endl
+         << "Reverse back of the string using memoisation function: " << reverseStringMemo(str);
     return 0;
 }
