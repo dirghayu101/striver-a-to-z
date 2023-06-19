@@ -12,9 +12,10 @@ using namespace std;
 
 string decimalToBinary(int number, string result = "")
 {
-    char res = '0' + (number % 2);
-    result.push_back(res);
-    if (number == 0)
+    int res = number % 2;
+    char push = res;
+    result.push_back(push);
+    if (number == 0 || number == 1)
     {
         return result;
     }
