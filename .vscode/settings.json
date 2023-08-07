@@ -9,5 +9,8 @@
     "stack": "cpp",
     "string": "cpp",
     "iosfwd": "cpp"
-  }
+  },
+  "cSpell.words": [
+    "cout"
+  ]
 }
