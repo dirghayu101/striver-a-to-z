@@ -61,3 +61,62 @@ int main()
 The advantage of unordered map is constant time complexity for storing and fetching, i.e. O(1). The worst case though is O(n). O(1) is average and best case time complexity.
 
 16. You should always choose unordered map over ordered map because of the reduce in time complexity.
+
+17. Hashing Methods include:
+    a> Division Method.
+    b> Folding Method.
+    c> Mid-square Method.
+
+18. Now, a question that might arise is the worst case scenario of unordered map.
+So, the division method is used for Hashing.
+
+Consider this array: [12, 87, 134, 1091, 1243]
+
+Now to store it using the division method, you will have an array with 10 index (0 to 9), and you will perform modulus operation on each array element with 10, and store the result in the index you receive.
+
+It will be stored as:
+[0]:
+[1]: 1091
+[2]: 12
+[3]: 1243
+[4]: 134
+[5]:
+[6]:
+[7]: 87
+[8]:
+[9]:
+
+If the array has repetition, like this: [12, 87, 134, 1091, 1243, 1792, 2095, 2211, 12085, 60000, 100000, 2]
+
+It will be stored like this:
+[0]: 60000, 100000
+[1]: 1091, 2211
+[2]: 2, 12, 1792
+[3]: 1243
+[4]: 134
+[5]: 2095, 12085
+[6]:
+[7]: 87
+[8]:
+[9]:
+
+The numbers will be sorted in the index. Refer the case of index 2.
+
+Now, for the worst case, consider this array: [1, 11, 111, 1111, 11111, 111111]
+Chaining will happen in this case.
+
+When you index this:
+[0]: 
+[1]: 1, 11, 111, 1111, 11111, 111111
+[2]:
+[3]:
+[4]:
+[5]:
+[6]:
+[7]:
+[8]:
+[9]:
+
+So, the time complexity in this case becomes O(n), which is called the collision case. 
+
+19. In case of map, any data-structure can be used as key. But in case of unordered map, there is limitation.
